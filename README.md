@@ -1,6 +1,6 @@
 # socialapp
 
-A new Flutter project.
+This is an Assignment Project for the Flutter Study Jam.
 
 ## Getting Started
 
