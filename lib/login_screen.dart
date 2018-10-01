@@ -16,6 +16,8 @@ class LoginScreenState extends State<LoginScreen> {
   final _emailFormKey = GlobalKey<FormState>();
   final _passwordFormKey = GlobalKey<FormState>();
 
+  var _loginPosition = 0.34;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +84,6 @@ class LoginScreenState extends State<LoginScreen> {
                                         }
                                       },
                                       decoration: InputDecoration(
-                                        //icon: Icon(Icons.mail_outline),
                                         icon: Icon(
                                           Icons.mail_outline,
                                           color: Colors.black,
@@ -150,7 +151,6 @@ class LoginScreenState extends State<LoginScreen> {
                                     ),
                                   ),
                                 ),
-
                               ],
                             ),
                           ),
@@ -158,14 +158,17 @@ class LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     Positioned(
-                      top: MediaQuery.of(context).size.height*0.34,
+                      top: MediaQuery.of(context).size.height*_loginPosition,
                       height: MediaQuery.of(context).size.height*0.1,
                       width: MediaQuery.of(context).size.width*1,
                       child: InkWell(
-                        //borderRadius: new BorderRadius.circular(10.0),
                         onTap: () {
                           if (_emailFormKey.currentState.validate() && _passwordFormKey.currentState.validate())
                             Navigator.of(context).pushReplacementNamed('userDetails');
+                          else
+                            setState(() {
+                              _loginPosition = 0.37;
+                            });
                         },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
@@ -173,7 +176,6 @@ class LoginScreenState extends State<LoginScreen> {
                             vertical: 8.0,
                           ),
                           child: new Container(
-                            //width: 100.0,
                             height: 50.0,
                             decoration: new BoxDecoration(
                               boxShadow: <BoxShadow>[
@@ -215,21 +217,6 @@ class LoginScreenState extends State<LoginScreen> {
           ],
         ),
       ),
-      /*Center(
-        child: RaisedButton(
-          color: Colors.amber,
-          child: Text(
-            'LOGIN',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          onPressed: () {
-            Navigator.of(context).pushNamed('userDetails');
-          }
-        ),
-      ),*/
     );
   }
 }
