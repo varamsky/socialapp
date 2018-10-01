@@ -8,7 +8,12 @@
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-### An input login screen with proper form validation.
+
+<img align="left" width="400" height="700" src="https://github.com/varamsky/socialapp/blob/master/Screenshot_3.jpeg">
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+### An input login screen with proper form validation and a details screen.
 
 
 ## Getting Started
